@@ -1,13 +1,11 @@
 #!/bin/bash
 
-# Expects
-# - USERNAME
-# to be set.
-
 # Need HTTPS and certs
-apt-get install apt-transport-https ca-certificates -y
+# apt-get install apt-transport-https ca-certificates -y
 # So we can use aufs storage driver
-apt-get install linux-image-extra-$(uname -r) linux-image-extra-virtual -y
+# # This makes a system restart required
+# apt-get install linux-image-extra-$(uname -r) linux-image-extra-virtual -y
+
 # Add GPG key
 apt-key adv --keyserver hkp://p80.pool.sks-keyservers.net:80 --recv-keys 58118E89F3A912897C070ADBF76221572C52609D
 # Add Docker repo to apt sources
@@ -21,5 +19,3 @@ apt-cache policy docker-engine
 # Install docker-engine
 apt-get install docker-engine -y
 
-# Add $USERNAME to docker group
-usermod -aG docker $USERNAME

@@ -39,9 +39,7 @@ chown -R $USERNAME:$USERNAME /home/$USERNAME/.ssh
 
 echo "Added public key to authorized_keys"
 
-curl -sfLo /usr/local/bin/yadm https://github.com/TheLocehiliosan/yadm/raw/master/yadm
-chmod a+x /usr/local/bin/yadm
-echo "Installed yadm"
+# curl -sfLo /usr/local/bin/yadm https://github.com/TheLocehiliosan/yadm/raw/master/yadm
+# chmod a+x /usr/local/bin/yadm
+# echo "Installed yadm"
 
-apt-get install build-essential cmake python-dev python3-dev -y
-echo "Installed a bunch of stuff"

@@ -14,6 +14,7 @@ export NVM_DIR=/home/$USERNAME/.nvm && (
 ) && . "$NVM_DIR/nvm.sh"
 
 nvm install 6
+npm install -g pm2 express
 
 yadm clone https://github.com/thejmazz/dotfiles
 yadm reset --hard HEAD

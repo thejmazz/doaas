@@ -7,6 +7,8 @@
 # Bring in vim from a prebuilt container. This is a bit involved with regards to
 # directory ownership, since container user has a different uid. So this script
 # needs to be run as root for sudo ops on chown.
+# TODO update vim container to handle user uids better,
+# see: https://denibertovic.com/posts/handling-permissions-with-docker-volumes/
 
 export VIM_VOLUME_DIR=/home/$USERNAME/vim-volume
 export CONTAINER_USER_UID=998
@@ -20,4 +22,6 @@ docker run --rm -v $VIM_VOLUME_DIR:/home/vim/work thejmazz/vim bash -c "cp -r ..
 cp -r $VIM_VOLUME_DIR/.vim /home/$USERNAME && rm -rf $VIM_VOLUME_DIR
 # Change ~/.vim ownership to user, not root
 chown -R $USERNAME:$USERNAME /home/$USERNAME/.vim
+
+echo "Brought in ~/.vim"
 
