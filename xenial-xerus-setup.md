@@ -105,3 +105,8 @@ sudo systemctl reload sshd
 ```
 
 DON'T LOG OUT YET! Log in from another terminal locally just to make sure you can still get in. If your key is correct and had its public key added to the `authorized_keys` file you will be fine.
+
+Insall these so you lose ssh connection nicer on restart (see [this](http://serverfault.com/questions/706475/ssh-sessions-hang-on-shutdown-reboot/706494#706494)):
+```
+apt-get install libpam-systemd dbus
+```
