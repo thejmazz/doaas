@@ -110,3 +110,9 @@ Insall these so you lose ssh connection nicer on restart (see [this](http://serv
 ```
 apt-get install libpam-systemd dbus
 ```
+
+HTTPS and certs + apt
+```
+apt-get install apt-transport-https ca-certificates software-properties-common -y
+```
+
